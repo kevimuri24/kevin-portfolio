@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: portfolio
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.0.0
+      - key: NODE_ENV
+        value: production
+    autoDeploy: true
+    plan: free
+    healthCheckPath: /
+    disk:
+      name: portfolio-data
+      mountPath: /data
+      sizeGB: 1
