@@ -5,7 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      borderRadius: {
+
+        '4xl': '16rem',
+        '8xl': '32rem',
+        '16xl': '64rem',
+        '32xl': '128rem',
+
+      },
+      
+    },
   },
   plugins: [],
 }

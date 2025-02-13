@@ -1,55 +1,26 @@
-<<<<<<< HEAD
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import Sidebar from './components/layout/Sidebar';
+import Hero from './components/sections/Hero';
+import Services from './components/sections/Services';
+import About from './components/sections/About';
+import Portfolio from './components/sections/Portfolio';
+import Blog from './components/sections/Blog';
+import Contact from './components/sections/Contact';
 
-function App() {
+const App = () => {
   return (
-
-    <div className='min-h-screen bg-gray-50'>
-      <Navbar />
-      <Hero />
-      <main className='pt-16'> 
-        {/* Your app content goes here */}
+    <div className="relative min-h-screen bg-white">
+      <Sidebar />
+      <main>
+        <Hero />
+        <Services />
+        <About />
+        <Portfolio />
+        <Blog />
+        <Contact />
       </main>
     </div>
-    
   );
 };
-=======
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
->>>>>>> 2a8797d (Made my portfolio)
-
-export default App
+export default App;
