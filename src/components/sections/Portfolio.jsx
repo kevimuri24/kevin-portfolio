@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, ArrowRight, MoveHorizontal } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react';
 
 const Portfolio = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -8,12 +8,14 @@ const Portfolio = () => {
     {
       image: "/api/placeholder/1200/600",
       title: "Digital Experience Design",
-      description: "Fuelled by my love for both art and technology, I embarked on a career path that seamlessly blends these two worlds. Currently, I offer Web Design and Development and Digital Marketing services to ambitious companies brimming with incredible potential for success."
+      description: "Fuelled by my love for both art and technology, I embarked on a career path that seamlessly blends these two worlds. Currently, I offer Web Design and Development and Digital Marketing services to ambitious companies brimming with incredible potential for success.",
+      category: "Web Design"
     },
     {
       image: "/api/placeholder/1200/600",
       title: "Brand Identity Development",
-      description: "Whether it's crafting visually captivating websites or devising innovative digital marketing strategies, I thrive on transforming ideas into impactful digital experiences."
+      description: "Whether it's crafting visually captivating websites or devising innovative digital marketing strategies, I thrive on transforming ideas into impactful digital experiences.",
+      category: "Branding"
     }
   ];
 
@@ -26,43 +28,48 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="min-h-screen pr-64 bg-white py-20">
-      <div className="px-16">
-        <h2 className="text-4xl font-normal mb-8">Portfolio</h2>
-        
-        <div className="mb-12">
+    <section id="portfolio" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <p className="text-sm font-medium text-teal-600 mb-2">MY PORTFOLIO</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Latest Works
+          </h2>
           <p className="text-gray-600">
-            What sets me apart is not just my <span className="text-red-500">technical expertise</span> but 
+            What sets me apart is not just my <span className="text-teal-600">technical expertise</span> but 
             also my commitment to sharing great ideas.
           </p>
         </div>
 
         {/* Project Showcase */}
-        <div className="relative">
-          <div className="relative aspect-[16/9] overflow-hidden">
+        <div className="relative bg-gray-50 rounded-3xl overflow-hidden">
+          <div className="aspect-[16/9] relative">
             <img
               src={projects[currentSlide].image}
               alt={projects[currentSlide].title}
               className="w-full h-full object-cover"
             />
             
-            {/* Navigation Button */}
-            <button 
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-4"
-              onClick={nextSlide}
-            >
-              <MoveHorizontal className="w-6 h-6" />
-            </button>
+            {/* Category Badge */}
+            <div className="absolute top-6 left-6">
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-teal-600">
+                {projects[currentSlide].category}
+              </span>
+            </div>
 
-            {/* Read More Button */}
-            <div className="absolute right-0 bottom-0 bg-red-500 text-white py-6 px-8">
-              <span className="text-sm uppercase tracking-wider">Read More</span>
+            {/* View Project Button */}
+            <div className="absolute bottom-6 right-6">
+              <button className="inline-flex items-center px-6 py-3 rounded-full bg-teal-600 text-white hover:bg-teal-700 transition-colors">
+                View Project
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </button>
             </div>
           </div>
 
           {/* Project Info */}
-          <div className="mt-8">
-            <h3 className="text-2xl font-medium mb-4">
+          <div className="p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
               {projects[currentSlide].title}
             </h3>
             <p className="text-gray-600 max-w-3xl">
@@ -70,23 +77,25 @@ const Portfolio = () => {
             </p>
           </div>
 
-          {/* Pagination */}
-          <div className="mt-8 flex justify-between items-center">
+          {/* Navigation */}
+          <div className="flex items-center justify-between p-8 border-t border-gray-100">
             <span className="text-sm text-gray-500">
               {currentSlide + 1} / {projects.length}
             </span>
             <div className="flex space-x-4">
               <button
                 onClick={prevSlide}
-                className="p-2 hover:text-red-500 transition-colors"
+                className="p-2 rounded-full hover:bg-gray-100 text-gray-600 hover:text-teal-600 transition-colors"
+                aria-label="Previous project"
               >
-                <ArrowLeft className="w-6 h-6" />
+                <ArrowLeft className="h-6 w-6" />
               </button>
               <button
                 onClick={nextSlide}
-                className="p-2 hover:text-red-500 transition-colors"
+                className="p-2 rounded-full hover:bg-gray-100 text-gray-600 hover:text-teal-600 transition-colors"
+                aria-label="Next project"
               >
-                <ArrowRight className="w-6 h-6" />
+                <ArrowRight className="h-6 w-6" />
               </button>
             </div>
           </div>

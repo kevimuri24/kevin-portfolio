@@ -1,25 +1,35 @@
 import React, { useState } from 'react';
-import { Clock, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Clock, ArrowLeft, ArrowRight, ChevronRight } from 'lucide-react';
 
 const BlogPost = ({ title, excerpt, image, category, readTime, isActive }) => (
-  <article className={`${isActive ? 'block' : 'hidden'}`}>
-    <div className="relative aspect-[16/9] overflow-hidden mb-8">
+  <article className={`${isActive ? 'block' : 'hidden'} bg-white rounded-2xl overflow-hidden shadow-sm`}>
+    <div className="relative aspect-[16/9] overflow-hidden">
       <img
         src={image}
         alt={title}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
       />
+      <div className="absolute top-6 left-6">
+        <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-teal-600">
+          {category}
+        </span>
+      </div>
     </div>
-    <div className="space-y-4">
-      <div className="flex items-center space-x-4 text-sm">
-        <span className="text-gray-600">{category}</span>
-        <div className="flex items-center space-x-1 text-gray-600">
+    <div className="p-8">
+      <div className="flex items-center space-x-4 text-sm mb-4">
+        <div className="flex items-center space-x-2 text-gray-600">
           <Clock size={14} />
-          <span>{readTime} min ago</span>
+          <span>{readTime} min read</span>
         </div>
       </div>
-      <h3 className="text-2xl font-medium">{title}</h3>
-      <p className="text-gray-600 max-w-3xl">{excerpt}</p>
+      <h3 className="text-2xl font-bold text-gray-900 mb-4 hover:text-teal-600 transition-colors">
+        {title}
+      </h3>
+      <p className="text-gray-600 mb-6">{excerpt}</p>
+      <button className="group inline-flex items-center text-sm font-medium text-teal-600 hover:text-teal-700 transition-colors">
+        Read More 
+        <ChevronRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      </button>
     </div>
   </article>
 );
@@ -60,16 +70,21 @@ const Blog = () => {
   };
 
   return (
-    <section id="blog" className="min-h-screen pr-64 bg-white py-20">
-      <div className="px-16">
-        <h2 className="text-4xl font-normal mb-8">Blog</h2>
-        
-        <p className="mb-12">
-          My academic pursuit led me to <span className="text-red-500">New York University</span> (NYU), 
-          where I delved into the world of arts and letters.
-        </p>
+    <section id="blog" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <p className="text-sm font-medium text-teal-600 mb-2">MY BLOG</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Latest Articles
+          </h2>
+          <p className="text-gray-600">
+            My academic pursuit led me to <span className="text-teal-600">New York University</span> (NYU), 
+            where I delved into the world of arts and letters.
+          </p>
+        </div>
 
-        {/* Blog Carousel */}
+        {/* Blog Posts */}
         <div className="relative">
           {posts.map((post, index) => (
             <BlogPost 
@@ -87,29 +102,29 @@ const Blog = () => {
             <div className="flex space-x-4">
               <button
                 onClick={prevSlide}
-                className="p-2 hover:text-red-500 transition-colors"
-                aria-label="Previous slide"
+                className="p-2 rounded-full hover:bg-gray-100 text-gray-600 hover:text-teal-600 transition-colors"
+                aria-label="Previous post"
               >
-                <ArrowLeft className="w-6 h-6" />
+                <ArrowLeft className="h-6 w-6" />
               </button>
               <button
                 onClick={nextSlide}
-                className="p-2 hover:text-red-500 transition-colors"
-                aria-label="Next slide"
+                className="p-2 rounded-full hover:bg-gray-100 text-gray-600 hover:text-teal-600 transition-colors"
+                aria-label="Next post"
               >
-                <ArrowRight className="w-6 h-6" />
+                <ArrowRight className="h-6 w-6" />
               </button>
             </div>
           </div>
 
           {/* Pagination Dots */}
-          <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <div className="flex justify-center space-x-2 mt-6">
             {posts.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`w-2 h-2 rounded-full transition-colors ${
-                  index === currentSlide ? 'bg-red-500' : 'bg-gray-200'
+                  index === currentSlide ? 'bg-teal-600' : 'bg-gray-200'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

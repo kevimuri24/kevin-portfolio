@@ -1,4 +1,17 @@
 import React, { useState } from 'react';
+import { Mail, MapPin, Phone, SendHorizontal } from 'lucide-react';
+
+const ContactInfo = ({ icon: Icon, title, content }) => (
+  <div className="flex items-start space-x-4">
+    <div className="p-3 bg-teal-50 rounded-xl text-teal-600">
+      <Icon size={24} />
+    </div>
+    <div>
+      <h3 className="font-medium text-gray-900 mb-1">{title}</h3>
+      <p className="text-gray-600">{content}</p>
+    </div>
+  </div>
+);
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,81 +22,97 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
     console.log(formData);
   };
 
-  return (
-    <section id="contact" className="min-h-screen pr-64 bg-white py-20">
-      <div className="px-16">
-        <h2 className="text-4xl font-normal mb-8">Contact</h2>
+  const contactInfo = [
+    {
+      icon: Mail,
+      title: "Email",
+      content: "kevimuri24@gmail.com"
+    },
+    {
+      icon: MapPin,
+      title: "Address",
+      content: "1000 Pleasent Park"
+    },
+    {
+      icon: Phone,
+      title: "Phone",
+      content: "(613) 868 1013"
+    }
+  ];
 
-        <div className="mb-12">
-          <p className="mb-4">
-            I believe that <span className="text-red-500">collaboration and creativity</span> are 
+  return (
+    <section id="contact" className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <p className="text-sm font-medium text-teal-600 mb-2">GET IN TOUCH</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Let's Work Together
+          </h2>
+          <p className="text-gray-600">
+            I believe that <span className="text-teal-600">collaboration and creativity</span> are 
             the cornerstones of progress, and I am dedicated to bringing a fresh perspective.
           </p>
         </div>
 
-        {/* Contact Info Grid */}
-        <div className="grid grid-cols-3 gap-8 mb-12">
-          <div>
-            <h3 className="font-medium mb-2">Email</h3>
-            <p className="text-gray-600">kevimuri24@gmail.com</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Info */}
+          <div className="space-y-8">
+            {contactInfo.map((info, index) => (
+              <ContactInfo key={index} {...info} />
+            ))}
           </div>
-          <div>
-            <h3 className="font-medium mb-2">Address</h3>
-            <p className="text-gray-600">1000 Pleasent Park</p>
-          </div>
-          <div>
-            <h3 className="font-medium mb-2">Phone</h3>
-            <p className="text-gray-600">(613) 868 1013</p>
+
+          {/* Contact Form */}
+          <div className="bg-white rounded-2xl p-8">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="What's your name?"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:border-teal-600 transition-colors"
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Your email"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:border-teal-600 transition-colors"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  />
+                </div>
+              </div>
+              <div>
+                <textarea
+                  placeholder="Tell us about your project"
+                  rows={6}
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:border-teal-600 transition-colors resize-none"
+                  value={formData.project}
+                  onChange={(e) => setFormData({...formData, project: e.target.value})}
+                />
+              </div>
+              <div className="flex items-center justify-between">
+                <p className="text-sm text-gray-500">
+                  * Your information is protected by our privacy policy
+                </p>
+                <button
+                  type="submit"
+                  className="inline-flex items-center px-6 py-3 bg-teal-600 text-white rounded-xl hover:bg-teal-700 transition-colors"
+                >
+                  Send Message
+                  <SendHorizontal className="ml-2 h-4 w-4" />
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-
-        {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="max-w-2xl">
-          <div className="grid grid-cols-2 gap-8 mb-8">
-            <div>
-              <input
-                type="text"
-                placeholder="What's your name"
-                className="w-full border-b border-gray-200 py-4 focus:outline-none focus:border-gray-900 transition-colors"
-                value={formData.name}
-                onChange={(e) => setFormData({...formData, name: e.target.value})}
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                placeholder="Your email"
-                className="w-full border-b border-gray-200 py-4 focus:outline-none focus:border-gray-900 transition-colors"
-                value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
-              />
-            </div>
-          </div>
-          <div className="mb-8">
-            <textarea
-              placeholder="Tell us about our project"
-              rows={6}
-              className="w-full border-b border-gray-200 py-4 focus:outline-none focus:border-gray-900 transition-colors resize-none"
-              value={formData.project}
-              onChange={(e) => setFormData({...formData, project: e.target.value})}
-            />
-          </div>
-          <div className="flex justify-between items-center">
-            <p className="text-sm text-gray-500">
-              * We promise not to disclose your personal information to third parties.
-            </p>
-            <button
-              type="submit"
-              className="bg-red-500 text-white px-8 py-3 hover:bg-red-600 transition-colors rounded-full"
-            >
-              Send message
-            </button>
-          </div>
-        </form>
       </div>
     </section>
   );
