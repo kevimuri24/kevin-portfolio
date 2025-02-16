@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-gray-900">Kevin Muriuki</h1>
+            <h1 className="text-4xl font-bold text-gray-900">Kevin Muriuki</h1>
           </div>
 
           {/* Desktop Navigation */}
@@ -47,7 +47,7 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-gray-700 hover:text-teal-500 transition-colors"
+                className="text-2xl font-medium text-gray-700 hover:text-teal-500 transition-colors"
               >
                 {item.name}
               </a>
