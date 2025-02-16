@@ -13,28 +13,27 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section className="py-36 px-36 bg-gray-100">
-      <div className="grid grid-flow-col grid-rows-3 gap-12">
-        <h2 className=" mt-32 row-span-1 text-6xl font-bold text-gray-900p">
-          My Tech Skills
-        </h2>
+    <section className="py-8 sm:py-16 md:py-36 px-4 sm:px-16 md:px-36 bg-gray-100">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
+        {/* Text Section */}
+        <div className="text-center md:text-left">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+            My Tech Skills
+          </h2>
+          <p className="mt-4 text-md sm:text-lg md:text-xl text-gray-600">
+            Over the past few years, I have worked on web and product solutions for various startups across multiple industries.
+          </p>
+        </div>
 
-        <p className=" col-span-1 text-4xl text-gray-600">
-          Over the past few years, I have worked on web and product solutions for various startups across multiple industries.
-        </p>
-
-        <div className="row-span-3 p-36  bg-red-400 rounded-lg">
-          
-          <div className="flex flex-wrap justify-center gap-6">
+        {/* Skills Section */}
+        <div className="p-4 sm:p-8 md:p-24 bg-red-400 rounded-lg flex flex-col items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:flex flex-wrap justify-center gap-4 sm:gap-6">
             {skills.map((skill, index) => (
               <span
                 key={index}
-                className="px-12 py-8 bg-white shadow-md border-4 border-black border-solid border-black-300 rounded-md text-gray-800  text-4xl"
+                className="px-3 sm:px-6 md:px-8 py-2 sm:py-3 md:py-2 bg-white shadow-md border-2 sm:border-4 border-black rounded-md text-gray-800 text-sm sm:text-md md:text-md"
               >
                 {skill}
-
-  
-  
               </span>
             ))}
           </div>
