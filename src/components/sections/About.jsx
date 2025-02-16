@@ -62,7 +62,7 @@ const About = () => {
           <div className="space-y-8">
             <div className="prose max-w-none">
               <p className="text-lg text-gray-600">
-                Hello there! I'm <span className="text-teal-600">Josie West</span>, 
+                Hello there! I'm <span className="text-teal-600">Kevin Muriuki</span>, 
                 a native New Yorker driven by innovation and a passion for creative expression.
               </p>
             </div>

@@ -22,12 +22,12 @@ const Hero = () => {
               </h1>
             </div>
             
-            <p className="text-gray-600 text-lg max-w-lg mx-auto lg:mx-0">
-              I believe that collaboration and creativity are the cornerstones of progress.
+            <p className="text-gray-600 text-4xl max-w-lg mx-auto lg:mx-0">
+              A Fullstack Developer in Ottawa, with 8+ years of experience.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-900 rounded-full text-gray-900 font-medium hover:bg-gray-900 hover:text-white transition-colors">
+              <button className="inline-flex items-center justify-center p-6 border-2 border-gray-900 text-gray-900 font-medium hover:bg-gray-900 hover:text-white transition-colors">
                 Explore my work
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
