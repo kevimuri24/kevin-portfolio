@@ -16,19 +16,19 @@ const Navbar = () => {
   const socialLinks = [
     { 
       icon: 'ri:github-fill',
-      href: '#',
+      href: 'https://github.com/kevimuri24',
       color: 'text-gray-900 hover:text-gray-400',
       name: 'GitHub'
     },
     { 
       icon: 'ri:linkedin-fill',
-      href: '#',
+      href: 'https://www.linkedin.com/in/kevinmuriukikarimi/',
       color: 'text-gray-600 hover:text-blue-600',
       name: 'LinkedIn'
     },
     { 
       icon: 'ri:instagram-line',
-      href: '#',
+      href: 'https://www.instagram.com/kevinmuri23/',
       color: 'text-gray-600 hover:text-[#E4405F]',
       name: 'Instagram'
     }
