@@ -2,12 +2,12 @@ import React from 'react';
 import { Code, Palette, Headset, Speech } from 'lucide-react';
 
 const ServiceCard = ({ icon: Icon, title, description }) => (
-  <div className="group p-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+  <div className="group py-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
     <div className="m-5 inline-block bg-teal-50 rounded-xl text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
       <Icon size={42} />
     </div>
-    <h3 className="text-2xl font-semibold text-gray-900">{title}</h3>
-    <p className="text-lg text-gray-600">{description}</p>
+    <h3 className="mx-4 text-xl font-semibold text-gray-900">{title}</h3>
+    <p className="m-0 p-4 text-lg text-gray-600">{description}</p>
   </div>
 );
 
@@ -36,7 +36,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-purple-200">
+    <section id="services" className="py-64 bg-purple-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-md font-medium text-teal-600 mb-2">MY SERVICES</p>

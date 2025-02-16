@@ -10,7 +10,7 @@ const Hero = () => {
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-2">
               <p className="inline-flex items-center text-lg font-medium text-teal-600 bg-teal-50 px-4 py-2 rounded-full">
-                <span>FULLSTACK DEVELOPER</span>
+                <span>FULLSTACK DEV</span>
                 <span className="mx-2">AND</span>
                 <span>DESIGNER</span>
               </p>
@@ -22,7 +22,7 @@ const Hero = () => {
               </h1>
             </div>
             
-            <p className="text-gray-600 text-4xl max-w-lg mx-auto lg:mx-0">
+            <p className="text-gray-600 text-2xl max-w-lg mx-auto lg:mx-5 m-0">
               A Fullstack Developer in Ottawa, with 8+ years of experience.
             </p>
             

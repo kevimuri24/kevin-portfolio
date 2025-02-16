@@ -17,16 +17,19 @@ const Navbar = () => {
     { 
       icon: 'ri:github-fill',
       href: '#',
+      color: 'text-gray-900 hover:text-gray-400',
       name: 'GitHub'
     },
     { 
       icon: 'ri:linkedin-fill',
       href: '#',
+      color: 'text-gray-600 hover:text-blue-600',
       name: 'LinkedIn'
     },
     { 
       icon: 'ri:instagram-line',
       href: '#',
+      color: 'text-gray-600 hover:text-[#E4405F]',
       name: 'Instagram'
     }
   ];
@@ -37,7 +40,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-4xl font-bold text-gray-900">Kevin Muriuki</h1>
+           <a href="#"><img src="/logo.svg" alt="Kevin Muriuki" width="50" height="50" /></a>
           </div>
 
           {/* Desktop Navigation */}
@@ -46,7 +49,7 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-2xl font-medium text-gray-700 hover:text-teal-500 transition-colors"
+                className="text-md font-medium text-gray-700 hover:text-teal-500 transition-colors"
               >
                 {item.name}
               </a>
@@ -59,7 +62,7 @@ const Navbar = () => {
               <a
                 key={social.name}
                 href={social.href}
-                className="text-gray-600 hover:text-teal-500 transition-colors"
+                className={`transition-colors ${social.color}`}
                 aria-label={social.name}
               >
                 <Icon icon={social.icon} className="w-5 h-5" />
@@ -101,7 +104,7 @@ const Navbar = () => {
               <a
                 key={social.name}
                 href={social.href}
-                className="text-gray-600 hover:text-teal-500 transition-colors"
+                className={`transition-colors ${social.color}`}
                 aria-label={social.name}
               >
                 <Icon icon={social.icon} className="w-5 h-5" />
