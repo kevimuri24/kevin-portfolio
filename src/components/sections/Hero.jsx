@@ -9,7 +9,7 @@ const Hero = () => {
           {/* Content */}
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-2">
-              <p className="inline-flex items-center text-sm font-medium text-teal-600 bg-teal-50 px-4 py-2 rounded-full">
+              <p className="inline-flex items-center text-lg font-medium text-teal-600 bg-teal-50 px-4 py-2 rounded-full">
                 <span>FULLSTACK DEVELOPER</span>
                 <span className="mx-2">AND</span>
                 <span>DESIGNER</span>
@@ -17,7 +17,7 @@ const Hero = () => {
               
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900">
                 <span className="block mb-2">HELLO I'M</span>
-                <span className="text-teal-600">KEVIN</span>
+                <span className="text-teal-500">KEVIN</span>
                 <span> MURIUKI</span>
               </h1>
             </div>
