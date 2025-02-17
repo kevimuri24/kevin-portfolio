@@ -5,7 +5,7 @@ const skills = [
   "Flask",
   "Python",
   "PostgreSQL",
-  "Git/GitWorkflow",
+  "Git",
   "Docker",
   "Firebase",
   "Render"
@@ -26,12 +26,12 @@ const Skills = () => {
         </div>
 
         {/* Skills Section */}
-        <div className="p-32 sm:p-8 md:p-32  bg-red-400 flex flex-col items-center">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:flex flex-wrap justify-center gap-4 sm:gap-6">
+        <div className="p-32 sm:p-6 md:p-32  bg-red-400 flex flex-col items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:flex flex-wrap justify-center gap-4 sm:gap-4">
             {skills.map((skill, index) => (
               <span
                 key={index}
-                className="px-3 sm:px-6 md:px-8 py-2 sm:py-3 md:py-3 bg-white shadow-md border-2 sm:border-2 border-black rounded-md text-gray-800 text-sm sm:text-md md:text-lg"
+                className="px-3 sm:px-10 md:px-8 py-2 sm:py-8 md:py-3 bg-white shadow-md border-2 sm:border-2 border-black text-gray-800 text-md sm:text-sm md:text-md"
               >
                 {skill}
               </span>

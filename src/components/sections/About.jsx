@@ -25,24 +25,50 @@ const ContactInfo = ({ icon: Icon, label, value }) => (
 const About = () => {
   const experience = [
     {
-      period: "2024 - Present",
-      title: "Web User Interface",
-      company: "Pixel Pioneer"
+      period: "May 2024 - January 2025",
+      title: "Software Engineering Student",
+      company: "Moringa School",
+      description: "Completed intensive full-stack development bootcamp focusing on modern web technologies",
+      highlights: [
+        "Frontend: HTML5, CSS3, JavaScript, React.js",
+        "Backend: Python, Flask",
+        "Version Control: Git & GitHub",
+        "Project-based learning with real-world applications"
+      ]
     },
     {
-      period: "2024 - Present",
-      title: "Frontend",
-      company: "Code Connoisseur"
+      period: "October 2024 - Present",
+      title: "Technical Support Specialist",
+      company: "Carleton University",
+      description: "Applied software development skills in technical support role",
+      highlights: [
+        "System administration and troubleshooting",
+        "Microsoft 365 & Azure administration",
+        "Cross-platform support (Windows, MacOS, Linux)"
+      ]
     },
     {
-      period: "2024 - Present",
-      title: "Animation 3D",
-      company: "Digital Artisan"
+      period: "January 2015 - Present",
+      title: "Freelance Developer",
+      company: "Self-Employed",
+      description: "Building custom web solutions and providing technical consultation",
+      highlights: [
+        "Full-stack web development",
+        "UI/UX design implementation",
+        "Client-focused solutions architecture"
+      ]
     },
     {
-      period: "2024 - Present",
-      title: "Branding Design",
-      company: "Brand Illuminator"
+      period: "Recent Projects",
+      title: "Portfolio Highlights",
+      company: "Bootcamp Projects",
+      description: "Developed several full-stack applications during the bootcamp",
+      highlights: [
+        "React & Tailwind front-end applications",
+        "Python Flask REST APIs",
+        "Database design and implementation",
+        "Collaborative team projects"
+      ]
     }
   ];
 
@@ -60,10 +86,15 @@ const About = () => {
           {/* Left Column - Image and Info */}
           <div className="space-y-8">
             <div className="prose max-w-none">
-              <p className="text-lg text-gray-600">
-                Hello there! I'm <span className="text-cyan-300">Kevin Muriuki</span>, 
-                a native New Yorker driven by innovation and a passion for creative expression.
-              </p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Hey! I'm <span className="text-cyan-500 font-medium">Kevin Muriuki</span>, a 
+              <span className="text-cyan-500 font-medium"> full-stack developer</span> with a 
+              unique edge in design. Over the past 8+ years, I've bridged the gap between 
+              development and design, crafting clean code and minimal interfaces that 
+              communicate powerfully. While my journey started in graphic design, my passion 
+              for problem-solving led me to tech consulting, where I help businesses build 
+              solutions that combine technical excellence with exceptional user experience.
+            </p>    
             </div>
 
             <div className="relative">
@@ -85,17 +116,17 @@ const About = () => {
               <ContactInfo 
                 icon={Mail}
                 label="Email"
-                value="josiew@mydomain.com"
+                value="kevimuri24@gmail.com"
               />
               <ContactInfo 
                 icon={Phone}
                 label="Phone"
-                value="(300) 300 40 30"
+                value="(613) 868 10 13"
               />
               <ContactInfo 
                 icon={Briefcase}
                 label="Role"
-                value="Web Designer and Developer"
+                value="FullStack Developer and Graphic Designer"
               />
             </div>
           </div>
@@ -110,11 +141,16 @@ const About = () => {
             </div>
             
             <div className="mt-12 prose max-w-none">
-              <p className="text-gray-600">
-                My journey into the digital realm began in the heart of the bustling streets 
-                of New York City. Growing up surrounded by the dynamic energy of the city, I 
-                developed a keen interest in harnessing technology to improve our digital lives.
-              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+              My technical toolkit spans modern web frameworks and custom development solutions, 
+              allowing me to build both standardized and bespoke applications. I leverage advanced 
+              proficiency in <span className="text-cyan-500 font-medium">Adobe Creative Suite</span> and 
+              <span className="text-cyan-500 font-medium"> Figma</span> to design intuitive user workflows 
+              and pixel-perfect interfaces. Additionally, my background in content creation has equipped 
+              me with expertise in video production using <span className="text-cyan-500 font-medium">Adobe 
+              Premiere Pro, After Effects,</span> and <span className="text-cyan-500 font-medium">OBS Studio</span>, 
+              enabling me to deliver comprehensive digital solutions.
+            </p>  
             </div>
           </div>
         </div>
