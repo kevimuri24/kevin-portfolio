@@ -4,19 +4,19 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const testimonials = [
   {
     name: "John Doe",
-    image: "/api/placeholder/96/96",
+    image: "/boy.png",
     testimony: "Kevin is an amazing developer! His attention to detail and problem-solving skills are top-notch.",
     role: "CEO, TechCorp",
   },
   {
     name: "Jane Smith",
-    image: "/api/placeholder/96/96",
+    image: "/woman.png",
     testimony: "Working with Kevin was a pleasure. His creativity and technical skills brought our project to life.",
     role: "Project Manager, DesignPro",
   },
   {
     name: "Michael Brown",
-    image: "/api/placeholder/96/96",
+    image: "/boy.png",
     testimony: "Highly recommend Kevin for any web development project. Professional and efficient!",
     role: "Founder, StartupX",
   },
