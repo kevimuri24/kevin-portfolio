@@ -3,7 +3,7 @@ import { Code, Palette, Paintbrush, Headset } from 'lucide-react';
 
 const ServiceCard = ({ icon: Icon, title, description }) => (
   <div className="group p-8 bg-white rounded-xl border-2 border-black hover:shadow-lg transition-all duration-300">
-    <div className="mb-6 inline-block p-2 rounded-xl text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+    <div className="mb-6 inline-block p-2 rounded-xl text-cyan-300 group-hover:bg-cyan-300 group-hover:text-white transition-colors">
       <Icon className="w-12 h-12" />
     </div>
     <h3 className="mb-4 text-xl font-semibold text-gray-900">{title}</h3>
@@ -40,7 +40,6 @@ const Services = () => {
     <section id="services" className="py-32 bg-purple-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-sm uppercase tracking-wider text-teal-600 mb-2">MY SERVICES</p>
           <h2 className="text-4xl font-bold text-gray-900">What I Do</h2>
         </div>
 

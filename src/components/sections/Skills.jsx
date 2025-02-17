@@ -26,7 +26,7 @@ const Skills = () => {
         </div>
 
         {/* Skills Section */}
-        <div className="p-4 sm:p-8 md:p-24 border-solid border-2 border-black bg-red-400 rounded-lg flex flex-col items-center">
+        <div className="p-4 sm:p-8 md:p-24  bg-red-400 flex flex-col items-center">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:flex flex-wrap justify-center gap-4 sm:gap-6">
             {skills.map((skill, index) => (
               <span

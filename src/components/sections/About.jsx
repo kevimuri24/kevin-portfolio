@@ -3,7 +3,7 @@ import { Mail, Phone, Briefcase } from 'lucide-react';
 
 const ExperienceItem = ({ period, title, company }) => (
   <div className="group relative pl-8 pb-8 border-l border-gray-100 last:pb-0">
-    <div className="absolute left-0 top-0 w-3 h-3 -translate-x-1.5 rounded-full bg-teal-100 border-2 border-teal-600 group-hover:bg-teal-600 transition-colors" />
+    <div className="absolute left-0 top-0 w-3 h-3 -translate-x-1.5 rounded-full bg-cyan-100 border-2 border-cyan-600 group-hover:bg-cyan-600 transition-colors" />
     <time className="block text-sm text-gray-500 mb-1">{period}</time>
     <h4 className="font-medium text-gray-900">{title}</h4>
     <p className="text-gray-600">{company}</p>
@@ -12,7 +12,7 @@ const ExperienceItem = ({ period, title, company }) => (
 
 const ContactInfo = ({ icon: Icon, label, value }) => (
   <div className="flex items-start space-x-3">
-    <div className="p-2 bg-teal-50 rounded-lg text-teal-600">
+    <div className="p-2 bg-cyan-50 rounded-lg text-cyan-300">
       <Icon size={20} />
     </div>
     <div>
@@ -51,9 +51,8 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-sm font-medium text-teal-600 mb-2">ABOUT ME</p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Getting to Know Me
+            Get to Know Me
           </h2>
         </div>
 
@@ -62,7 +61,7 @@ const About = () => {
           <div className="space-y-8">
             <div className="prose max-w-none">
               <p className="text-lg text-gray-600">
-                Hello there! I'm <span className="text-teal-600">Kevin Muriuki</span>, 
+                Hello there! I'm <span className="text-cyan-300">Kevin Muriuki</span>, 
                 a native New Yorker driven by innovation and a passion for creative expression.
               </p>
             </div>
@@ -76,8 +75,8 @@ const About = () => {
                 />
                 </div>
                 {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-teal-200 rounded-full blur-xl opacity-60" />
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-200 rounded-full blur-xl opacity-60" />
+                <div className="absolute -top-4 -right-4 w-24 h-24 border-solid border-black bg-cyan-300 rounded-full blur-xl opacity-60" />
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-cyan-300 rounded-full blur-xl opacity-60" />
               </div>
 
 

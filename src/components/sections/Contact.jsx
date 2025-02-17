@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Phone, SendHorizontal } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
-const ContactInfo = ({ icon: Icon, title, content }) => (
-  <div className="flex items-start space-x-4">
-    <div className="p-3 bg-teal-50 rounded-xl text-teal-600">
-      <Icon size={24} />
+const ContactItem = ({ icon: Icon, label, value, href }) => (
+  <div className="flex items-center space-x-4">
+    <div className="bg-white bg-opacity-10 p-4 rounded-2xl">
+      <Icon className="w-6 h-6" />
     </div>
     <div>
-      <h3 className="font-medium text-gray-900 mb-1">{title}</h3>
-      <p className="text-gray-600">{content}</p>
+      <p className="text-gray-400 mb-2">{label}:</p>
+      <a href={href} className="text-xl hover:underline">
+        {value}
+      </a>
     </div>
   </div>
 );
@@ -17,7 +19,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    project: ''
+    message: ''
   });
 
   const handleSubmit = (e) => {
@@ -25,91 +27,82 @@ const Contact = () => {
     console.log(formData);
   };
 
-  const contactInfo = [
+  const contactDetails = [
+    {
+      icon: Phone,
+      label: 'Call',
+      value: '(613) 868 1013',
+      href: 'tel:(613) 868 1013'
+    },
     {
       icon: Mail,
-      title: "Email",
-      content: "kevimuri24@gmail.com"
+      label: 'Email',
+      value: 'kevimuri24@gmail.com',
+      href: 'mailto:kevimuri24@gmail.com'
     },
     {
       icon: MapPin,
-      title: "Address",
-      content: "1000 Pleasent Park"
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      content: "(613) 868 1013"
+      label: 'Address',
+      value: 'Ottawa, Canada',
+      href: '#'
     }
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section className="bg-gray-500 text-white py-48">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-sm font-medium text-teal-600 mb-2">GET IN TOUCH</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Let's Work Together
-          </h2>
-          <p className="text-gray-600">
-            I believe that <span className="text-teal-600">collaboration and creativity</span> are 
-            the cornerstones of progress, and I am dedicated to bringing a fresh perspective.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+          {/* Left Column - Contact Info */}
           <div className="space-y-8">
-            {contactInfo.map((info, index) => (
-              <ContactInfo key={index} {...info} />
-            ))}
+            {/* Contact Title */}
+            <div className="space-y-4">
+              <h2 className="text-5xl font-bold leading-tight">Drop me a line</h2>
+            </div>
+
+            {/* Contact Details */}
+            <div className="space-y-8 pt-8">
+              {contactDetails.map((item, index) => (
+                <ContactItem key={index} {...item} />
+              ))}
+            </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-white rounded-2xl p-8">
+          {/* Right Column - Contact Form */}
+          <div className="bg-white p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <input
-                    type="text"
-                    placeholder="What's your name?"
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:border-teal-600 transition-colors"
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:border-teal-600 transition-colors"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  />
-                </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  className="w-full px-6 py-4 border-2 border-solid border-black bg-gray-50 rounded-xl focus:outline-none focus:border-red-500 transition-colors text-gray-800"
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full px-6 py-4 border-2 border-solid border-black bg-gray-50 rounded-xl focus:outline-none focus:border-red-500 transition-colors text-gray-800"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                />
               </div>
               <div>
                 <textarea
-                  placeholder="Tell us about your project"
+                  placeholder="Message"
                   rows={6}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:border-teal-600 transition-colors resize-none"
-                  value={formData.project}
-                  onChange={(e) => setFormData({...formData, project: e.target.value})}
+                  className="w-full px-6 py-4 bg-gray-50 border-2 border-solid border-black rounded-xl focus:outline-none focus:border-red-500 transition-colors resize-none text-gray-800"
+                  value={formData.message}
+                  onChange={(e) => setFormData({...formData, message: e.target.value})}
                 />
               </div>
-              <div className="flex items-center justify-between">
-                <p className="text-sm text-gray-500">
-                  * Your information is protected by our privacy policy
-                </p>
-                <button
-                  type="submit"
-                  className="inline-flex items-center px-6 py-3 bg-teal-600 text-white rounded-xl hover:bg-teal-700 transition-colors"
-                >
-                  Send Message
-                  <SendHorizontal className="ml-2 h-4 w-4" />
-                </button>
-              </div>
+              <button
+                type="submit"
+                className="w-full py-4 bg-cyan-300 text-white border-2 border-solid border-black hover:bg-black transition-colors font-medium"
+              >
+                Submit Message
+              </button>
             </form>
           </div>
         </div>
