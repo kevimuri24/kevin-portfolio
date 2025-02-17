@@ -62,7 +62,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="py-12 bg-gray-50">
+    <div id="portfolio" className="py-64 sm:py-8 md:py-64 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
           My Portfolio

@@ -3,11 +3,11 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 
 const ContactItem = ({ icon: Icon, label, value, href }) => (
   <div className="flex items-center space-x-4">
-    <div className="bg-white bg-opacity-10 p-4 rounded-2xl">
-      <Icon className="w-6 h-6" />
+    <div className="border-2 border-black bg-white p-4 rounded-xl">
+      <Icon className="w-6 h-6 text-black" />
     </div>
     <div>
-      <p className="text-gray-400 mb-2">{label}:</p>
+      <p className="text-black mb-2">{label}:</p>
       <a href={href} className="text-xl hover:underline">
         {value}
       </a>
@@ -49,7 +49,7 @@ const Contact = () => {
   ];
 
   return (
-    <section className="bg-gray-500 text-white py-48">
+    <section id="contact" className="bg-cyan-300 text-black py-48">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Left Column - Contact Info */}
@@ -74,7 +74,7 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="Name"
-                  className="w-full px-6 py-4 border-2 border-solid border-black bg-gray-50 rounded-xl focus:outline-none focus:border-red-500 transition-colors text-gray-800"
+                  className="w-full px-6 py-4 border-2 border-solid border-black bg-gray-50 focus:outline-none focus:border-red-500 transition-colors text-gray-800"
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                 />
@@ -83,7 +83,7 @@ const Contact = () => {
                 <input
                   type="email"
                   placeholder="Email"
-                  className="w-full px-6 py-4 border-2 border-solid border-black bg-gray-50 rounded-xl focus:outline-none focus:border-red-500 transition-colors text-gray-800"
+                  className="w-full px-6 py-4 border-2 border-solid border-black bg-gray-50 focus:outline-none focus:border-red-500 transition-colors text-gray-800"
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                 />
@@ -92,14 +92,14 @@ const Contact = () => {
                 <textarea
                   placeholder="Message"
                   rows={6}
-                  className="w-full px-6 py-4 bg-gray-50 border-2 border-solid border-black rounded-xl focus:outline-none focus:border-red-500 transition-colors resize-none text-gray-800"
+                  className="w-full px-6 py-4 bg-gray-50 border-2 border-solid border-black focus:outline-none focus:border-red-500 transition-colors resize-none text-gray-800"
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                 />
               </div>
               <button
                 type="submit"
-                className="w-full py-4 bg-cyan-300 text-white border-2 border-solid border-black hover:bg-black transition-colors font-medium"
+                className="w-full py-8 bg-cyan-300 text-white border-2 border-solid border-black hover:bg-black transition-colors font-medium"
               >
                 Submit Message
               </button>

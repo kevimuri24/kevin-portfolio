@@ -37,10 +37,10 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-32 bg-purple-100">
+    <section id="services" className="md:py-64 sm:py-32 bg-cyan-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900">What I Do</h2>
+          <h2 className="text-5xl text-white font-bold leading-tight">What I Do</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

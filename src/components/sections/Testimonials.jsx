@@ -59,7 +59,7 @@ const TestimonialCarousel = () => {
   }, []);
 
   return (
-    <section className="py-12 bg-gray-100">
+    <section id="testimonials" className="py-64 sm:py-8 md:py-64 bg-gray-100">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
           What Clients Say

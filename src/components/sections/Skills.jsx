@@ -13,11 +13,11 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section className="py-8 sm:py-16 md:py-36 px-4 sm:px-16 md:px-64 bg-gray-100">
+    <section id="skills" className="py-8 sm:py-16 md:py-36 px-4 sm:px-16 md:px-64 bg-cyan-300">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
         {/* Text Section */}
         <div className="text-center md:text-left">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className="text-5xl text-black font-bold leading-tight">
             My Tech Skills
           </h2>
           <p className="mt-4 text-md sm:text-lg md:text-xl text-gray-600">
@@ -26,7 +26,7 @@ const Skills = () => {
         </div>
 
         {/* Skills Section */}
-        <div className="p-4 sm:p-8 md:p-24  bg-red-400 flex flex-col items-center">
+        <div className="p-32 sm:p-8 md:p-32  bg-red-400 flex flex-col items-center">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:flex flex-wrap justify-center gap-4 sm:gap-6">
             {skills.map((skill, index) => (
               <span
