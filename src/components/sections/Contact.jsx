@@ -49,7 +49,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="bg-cyan-300 text-black py-48">
+    <section id="contact" className="bg-gray-200 text-black py-48">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Left Column - Contact Info */}
@@ -60,7 +60,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Details */}
-            <div className="space-y-8 pt-8">
+            <div className="space-y-8 pt-8 font-medium text-xl">
               {contactDetails.map((item, index) => (
                 <ContactItem key={index} {...item} />
               ))}
@@ -68,7 +68,7 @@ const Contact = () => {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="bg-white p-8">
+          <div className="bg-cyan-300 p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <input
@@ -99,7 +99,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full py-8 bg-cyan-300 text-white border-2 border-solid border-black hover:bg-black transition-colors font-medium"
+                className=" w-full py-8 bg-white text-black border-2 border-solid border-black hover:bg-black hover:text-white transition-colors font-bold"
               >
                 Submit Message
               </button>
