@@ -5,9 +5,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const NavigationButton = memo(({ direction, onClick, children }) => (
   <button 
     onClick={onClick}
-    className={`absolute ${
-      direction === 'left' ? 'left-0 -translate-x-12' : 'right-0 translate-x-12'
-    } top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors`}
+    className={`absolute top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors ${
+      direction === 'left' ? '-left-3 md:-left-5' : '-right-3 md:-right-5'
+    }`}
     aria-label={`${direction} testimonial`}
   >
     {children}
@@ -16,20 +16,20 @@ const NavigationButton = memo(({ direction, onClick, children }) => (
 
 // Memoized Testimonial Card
 const TestimonialCard = memo(({ testimonial }) => (
-  <div className="bg-white p-8 rounded-lg shadow-lg">
+  <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg">
     <div className="flex flex-col items-center text-center">
       <img
         src={testimonial.image}
         alt={testimonial.name}
-        className="w-24 h-24 rounded-full object-cover mb-6"
+        className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover mb-4 md:mb-6"
         loading="lazy"
         width="96"
         height="96"
       />
-      <p className="text-gray-700 italic text-lg mb-6">
+      <p className="text-gray-700 italic text-base md:text-lg mb-4 md:mb-6">
         "{testimonial.testimony}"
       </p>
-      <h4 className="text-xl font-semibold text-gray-900">
+      <h4 className="text-lg md:text-xl font-semibold text-gray-900">
         {testimonial.name}
       </h4>
       <p className="text-sm text-gray-600">
@@ -44,7 +44,6 @@ const TestimonialCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Consider moving this to a separate data file
   const testimonials = [
     {
       name: "John Doe",
@@ -69,22 +68,18 @@ const TestimonialCarousel = () => {
   const goToNext = useCallback(() => {
     if (!isAnimating) {
       setIsAnimating(true);
-      requestAnimationFrame(() => {
-        setCurrentIndex((prevIndex) => 
-          prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-        );
-      });
+      setCurrentIndex((prevIndex) => 
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      );
     }
   }, [isAnimating, testimonials.length]);
 
   const goToPrevious = useCallback(() => {
     if (!isAnimating) {
       setIsAnimating(true);
-      requestAnimationFrame(() => {
-        setCurrentIndex((prevIndex) => 
-          prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-        );
-      });
+      setCurrentIndex((prevIndex) => 
+        prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+      );
     }
   }, [isAnimating, testimonials.length]);
 
@@ -98,36 +93,32 @@ const TestimonialCarousel = () => {
     }
   }, [isAnimating]);
 
-  // Auto-advance carousel with RAF
+  // Auto-advance carousel
   React.useEffect(() => {
-    let rafId;
-    const interval = setInterval(() => {
-      rafId = requestAnimationFrame(goToNext);
-    }, 5000);
-
-    return () => {
-      clearInterval(interval);
-      cancelAnimationFrame(rafId);
-    };
+    const interval = setInterval(goToNext, 5000);
+    return () => clearInterval(interval);
   }, [goToNext]);
 
   return (
-    <section id="testimonials" className="py-16 md:py-24 bg-cyan-300">
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+    <section id="testimonials" className="py-16 md:py-24 lg:py-32 bg-cyan-300">
+      <div className="max-w-4xl mx-auto px-8 md:px-12">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-8 md:mb-12">
           What Clients Say
         </h2>
         
-        <div className="relative">
-          <NavigationButton direction="left" onClick={goToPrevious}>
-            <ChevronLeft className="w-6 h-6 text-gray-600" />
-          </NavigationButton>
-          
-          <NavigationButton direction="right" onClick={goToNext}>
-            <ChevronRight className="w-6 h-6 text-gray-600" />
-          </NavigationButton>
+        <div className="relative px-4 md:px-8">
+          {/* Carousel Container */}
+          <div className="relative">
+            <NavigationButton direction="left" onClick={goToPrevious}>
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-gray-600" />
+            </NavigationButton>
+            
+            <NavigationButton direction="right" onClick={goToNext}>
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-gray-600" />
+            </NavigationButton>
 
-          <TestimonialCard testimonial={testimonials[currentIndex]} />
+            <TestimonialCard testimonial={testimonials[currentIndex]} />
+          </div>
 
           {/* Dots Indicator */}
           <div className="flex justify-center mt-6 gap-2">
