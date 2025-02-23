@@ -3,17 +3,21 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="#" className="py-12 md:py-16 lg:py-20 min-h-screen bg-gradient-to-b from-cyan-50/50">
+    <section 
+      id="hero" 
+      className="pt-24 sm:pt-28 md:pt-32 lg:pt-40 pb-12 sm:pb-20 md:pb-16 lg:pb-20 min-h-screen bg-gradient-to-b from-cyan-50/50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           {/* Content */}
           <div className="space-y-6 md:space-y-8 text-center lg:text-left">
-            <div className="space-y-4">
-              <p className="inline-flex flex-wrap justify-center lg:justify-start items-center text-sm md:text-lg font-medium text-cyan-300 bg-cyan-50 px-3 py-2 md:px-4 md:py-2 rounded-full">
+            <div className="space-y-4 relative">
+              {/* Ensuring text is visible */}
+              <div className="inline-flex flex-wrap justify-center lg:justify-start items-center text-sm md:text-lg font-medium text-cyan-300 bg-cyan-50 px-3 py-2 md:px-4 md:py-2 rounded-full">
                 <span>FULLSTACK DEV</span>
                 <span className="mx-2">AND</span>
                 <span>DESIGNER</span>
-              </p>
+              </div>
               
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
                 <span className="block mb-2">HELLO I'M</span>
