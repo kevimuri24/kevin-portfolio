@@ -54,9 +54,9 @@ Welcome to my portfolio website! This project showcases my work, skills, and ser
 
 ## 📬 Contact
 If you have any questions or would like to collaborate, feel free to reach out!
-- 📧 Email: [your-email@example.com](mailto:your-email@example.com)
-- 🌐 Website: [your-portfolio.com](https://your-portfolio.com)
-- 🐦 Twitter: [@yourhandle](https://twitter.com/yourhandle)
+- 📧 Email: [kevimuri24@gmail.com](mailto:kevimuri24@gmail.com)
+- 🌐 Website: [kevin's-portfolio](https://kevin-portfolio-b5y5.onrender.com/)
+
 
 ---
 ### 🚧 Future Improvements
