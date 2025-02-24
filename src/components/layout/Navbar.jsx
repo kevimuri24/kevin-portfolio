@@ -49,7 +49,7 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-md font-medium text-gray-700 hover:text-teal-500 transition-colors"
+                className="text-md font-medium text-gray-700 hover:text-cyan-300 transition-colors"
               >
                 {item.name}
               </a>
@@ -74,7 +74,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md text-gray-700 hover:text-teal-500 focus:outline-none"
+              className="p-2 rounded-md text-gray-700 hover:text-cyan-300 focus:outline-none"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -93,7 +93,7 @@ const Navbar = () => {
             <a
               key={item.name}
               href={item.href}
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-teal-500 hover:bg-gray-50 rounded-md"
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-300 hover:bg-gray-50 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               {item.name}
