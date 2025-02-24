@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import { Phone, Mail, MapPin, SendHorizontal } from 'lucide-react';
+import { Phone, Mail, MapPin, SendHorizontal, ThumbsUp } from 'lucide-react';
 
 const ContactItem = ({ icon: Icon, label, value, href }) => (
   <div className="flex items-center space-x-4">
@@ -134,8 +134,8 @@ const Contact = () => {
                 <SendHorizontal className="ml-2 h-5 w-5" />
               </button>
 
-              {success === true && <p className="text-green-600 mt-2">Email sent successfully!</p>}
-              {success === false && <p className="text-red-600 mt-2">Failed to send email. Try again.</p>}
+              {success === true && <p className="text-black mt-2">Email sent successfully, I'll be in touch!  <ThumbsUp className=" mb-2 h-4 w-4 inline-block" /></p>}
+              {success === false && <p className="text-red-600 mt-2">Failed to send email. Let's try that again. <SendHorizontal className="ml-2 h-5 w-5" /></p>}
             </form>
           </div>
         </div>
