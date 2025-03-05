@@ -120,16 +120,6 @@ const About = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               <ContactInfo 
-                icon={Mail}
-                label="Email"
-                value="kevimuri24@gmail.com"
-              />
-              <ContactInfo 
-                icon={Phone}
-                label="Phone"
-                value="(613) 868 1013"
-              />
-              <ContactInfo 
                 icon={Briefcase}
                 label="Role"
                 value="Full-Stack Developer"
